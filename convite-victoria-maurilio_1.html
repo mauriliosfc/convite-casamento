@@ -303,34 +303,24 @@ body{
 }
 @media (max-width:540px){ .identidade{ grid-template-columns:1fr; } }
 
-.retrato{
-  aspect-ratio:3/4;
+.retrato-casal{
+  width:100%;
+  aspect-ratio:4/3;
   border:1px solid var(--azul-med);
-  background:
-    linear-gradient(140deg, rgba(155,101,117,.22), rgba(240,216,222,.5));
-  display:grid;
-  place-items:center;
-  position:relative;
   overflow:hidden;
+  margin-bottom:26px;
+  position:relative;
 }
-.retrato img{
+.retrato-casal img{
   width:100%; height:100%;
   object-fit:cover;
+  object-position:center 35%;
   display:block;
 }
-.retrato-vazio{
-  font-family:var(--mono);
-  font-size:.62rem;
-  letter-spacing:.16em;
-  color:var(--royal);
-  text-align:center;
-  opacity:.65;
-  padding:0 10px;
-}
-.retrato::after{
+.retrato-casal::after{
   content:"";
   position:absolute; inset:0;
-  background:repeating-linear-gradient(-38deg, transparent 0 11px, rgba(140,26,48,.09) 11px 12px);
+  background:repeating-linear-gradient(-38deg, transparent 0 11px, rgba(140,26,48,.06) 11px 12px);
   pointer-events:none;
 }
 
@@ -817,12 +807,12 @@ body{
       <span class="folio">Página 02</span>
     </div>
 
+    <div class="retrato-casal">
+      <img src="casal.jpg" alt="Victoria e Maurilio">
+    </div>
+
     <div class="identidade">
-      <!-- Para colocar a foto: troque o bloco .retrato-vazio por <img src="victoria.jpg" alt="Victoria"> -->
       <div>
-        <div class="retrato">
-          <img src="victoria.jpg" alt="Victoria">
-        </div>
         <dl class="ficha">
           <div class="campo"><dt>Nome</dt><dd class="destaque">Victoria</dd></div>
           <div class="campo"><dt>Origem</dt><dd>Rio de Janeiro · RJ</dd></div>
@@ -831,9 +821,6 @@ body{
       </div>
 
       <div>
-        <div class="retrato">
-          <img src="maurilio.jpg" alt="Maurilio">
-        </div>
         <dl class="ficha">
           <div class="campo"><dt>Nome</dt><dd class="destaque">Maurilio</dd></div>
           <div class="campo"><dt>Origem</dt><dd>Santo Antônio do Grama · MG</dd></div>
