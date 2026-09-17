@@ -43,16 +43,16 @@ const CONVITE = {
    TOKENS
    ============================================================ */
 :root{
-  --navy:      #0B1D3A;
-  --petroleo:  #14395E;
-  --royal:     #1F4E8C;
-  --azul-med:  #4A7FBF;
-  --azul-pale: #8FB4DB;
-  --gelo:      #E3ECF7;
-  --papel:     #EEF4FB;
+  --navy:      #2D0610;
+  --petroleo:  #4A0E1A;
+  --royal:     #8C1A30;
+  --azul-med:  #9B6575;
+  --azul-pale: #C9909E;
+  --gelo:      #F0D8DE;
+  --papel:     #FAF0F2;
   --ouro:      #C9A227;
   --ouro-claro:#E4C765;
-  --tinta:     #0E2340;
+  --tinta:     #2D0610;
 
   --serif: "Playfair Display", Georgia, serif;
   --mono:  "Courier Prime", "Courier New", monospace;
@@ -130,7 +130,7 @@ body{
   content:"";
   position:absolute;
   inset:0;
-  background-image:repeating-linear-gradient(115deg, transparent 0 9px, rgba(143,180,219,.18) 9px 10px);
+  background-image:repeating-linear-gradient(115deg, transparent 0 9px, rgba(201,144,158,.18) 9px 10px);
   opacity:.5;
   pointer-events:none;
 }
@@ -164,7 +164,7 @@ body{
   letter-spacing:.01em;
   color:var(--petroleo);
 }
-.pagina--escura .cabeca{ border-bottom-color:rgba(143,180,219,.4); }
+.pagina--escura .cabeca{ border-bottom-color:rgba(201,144,158,.4); }
 .pagina--escura .cabeca h2{ color:var(--gelo); }
 .cabeca .folio{
   font-family:var(--mono);
@@ -183,7 +183,7 @@ body{
   display:grid;
   place-items:center;
   background:
-    radial-gradient(ellipse at 50% 32%, #16305A 0%, var(--navy) 62%, #061229 100%);
+    radial-gradient(ellipse at 50% 32%, #4A1020 0%, var(--navy) 62%, #160309 100%);
   padding:40px 20px;
   position:relative;
 }
@@ -289,7 +289,7 @@ body{
   font-family:var(--mono);
   font-size:.6rem;
   letter-spacing:.3em;
-  color:rgba(143,180,219,.55);
+  color:rgba(201,144,158,.55);
   z-index:2;
 }
 
@@ -307,7 +307,7 @@ body{
   aspect-ratio:3/4;
   border:1px solid var(--azul-med);
   background:
-    linear-gradient(140deg, rgba(143,180,219,.22), rgba(227,236,247,.5));
+    linear-gradient(140deg, rgba(155,101,117,.22), rgba(240,216,222,.5));
   display:grid;
   place-items:center;
   position:relative;
@@ -330,7 +330,7 @@ body{
 .retrato::after{
   content:"";
   position:absolute; inset:0;
-  background:repeating-linear-gradient(-38deg, transparent 0 11px, rgba(31,78,140,.09) 11px 12px);
+  background:repeating-linear-gradient(-38deg, transparent 0 11px, rgba(140,26,48,.09) 11px 12px);
   pointer-events:none;
 }
 
@@ -379,7 +379,7 @@ body{
   position:relative;
   border:1px solid rgba(201,162,39,.55);
   padding:38px 26px 34px;
-  background:rgba(11,29,58,.4);
+  background:rgba(45,6,16,.4);
 }
 .visto-tipo{
   font-family:var(--mono);
@@ -404,7 +404,7 @@ body{
   display:flex;
   flex-wrap:wrap;
   gap:24px 38px;
-  border-top:1px solid rgba(143,180,219,.3);
+  border-top:1px solid rgba(201,144,158,.3);
   padding-top:22px;
 }
 .visto-linhas div span{
@@ -486,7 +486,7 @@ body{
 .embarque{
   display:flex;
   background:#fff;
-  box-shadow:0 18px 40px rgba(11,29,58,.16);
+  box-shadow:0 18px 40px rgba(45,6,16,.16);
   position:relative;
 }
 @media (max-width:620px){ .embarque{ flex-direction:column; } }
@@ -598,7 +598,7 @@ body{
 .etiqueta:nth-child(1){ background:var(--navy); }
 .etiqueta:nth-child(2){ background:var(--petroleo); }
 .etiqueta:nth-child(3){ background:var(--royal); }
-.etiqueta:nth-child(4){ background:#2C639E; }
+.etiqueta:nth-child(4){ background:#7A1A2E; }
 .etiqueta h3{
   font-family:var(--mono);
   font-size:.62rem;
@@ -641,7 +641,7 @@ body{
   position:relative;
   border:1px solid rgba(201,162,39,.55);
   padding:36px 26px 34px;
-  background:rgba(11,29,58,.4);
+  background:rgba(45,6,16,.4);
   max-width:520px;
 }
 .controle-texto{
@@ -691,8 +691,8 @@ body{
 }
 .flap{
   min-width:74px;
-  background:linear-gradient(to bottom, #16294A 0 49%, #0A1729 51% 100%);
-  border:1px solid rgba(143,180,219,.22);
+  background:linear-gradient(to bottom, #3D0B18 0 49%, #220510 51% 100%);
+  border:1px solid rgba(201,144,158,.22);
   padding:14px 10px 10px;
   position:relative;
 }
@@ -732,7 +732,7 @@ body{
   font-family:var(--mono);
   font-size:.62rem;
   letter-spacing:.24em;
-  color:rgba(143,180,219,.6);
+  color:rgba(201,144,158,.6);
   margin:26px 0 0;
 }
 
@@ -794,9 +794,9 @@ body{
       </g>
       <!-- monograma -->
       <text x="60" y="76" text-anchor="middle" font-family="Playfair Display, serif"
-            font-size="36" fill="#E3ECF7" letter-spacing="1">V</text>
+            font-size="36" fill="#F0D8DE" letter-spacing="1">V</text>
       <text x="60" y="76" text-anchor="middle" font-family="Playfair Display, serif"
-            font-size="36" fill="#E3ECF7" letter-spacing="1" dx="30">M</text>
+            font-size="36" fill="#F0D8DE" letter-spacing="1" dx="30">M</text>
       <text x="60" y="74" text-anchor="middle" font-family="Playfair Display, serif"
             font-size="22" font-style="italic" fill="#C9A227" dx="15">&amp;</text>
     </svg>
@@ -856,22 +856,22 @@ body{
 
   <!-- carimbos -->
   <svg class="carimbo-solto" style="top:54px; right:14px; width:108px; height:108px; --rot:14deg" viewBox="0 0 120 120" aria-hidden="true">
-    <circle cx="60" cy="60" r="55" fill="none" stroke="#1F4E8C" stroke-width="2.4"/>
-    <circle cx="60" cy="60" r="47" fill="none" stroke="#1F4E8C" stroke-width="1"/>
+    <circle cx="60" cy="60" r="55" fill="none" stroke="#8C1A30" stroke-width="2.4"/>
+    <circle cx="60" cy="60" r="47" fill="none" stroke="#8C1A30" stroke-width="1"/>
     <path id="arco1" d="M60 60 m -37 0 a 37 37 0 1 1 74 0" fill="none"/>
-    <text font-family="Courier Prime, monospace" font-size="10.5" fill="#1F4E8C" letter-spacing="1.4">
+    <text font-family="Courier Prime, monospace" font-size="10.5" fill="#8C1A30" letter-spacing="1.4">
       <textPath href="#arco1" startOffset="50%" text-anchor="middle">RIO DE JANEIRO</textPath>
     </text>
-    <text x="60" y="66" text-anchor="middle" font-family="Courier Prime, monospace" font-size="15" fill="#1F4E8C">RJ</text>
-    <text x="60" y="84" text-anchor="middle" font-family="Courier Prime, monospace" font-size="8.5" fill="#1F4E8C" letter-spacing="1">SAÍDA</text>
+    <text x="60" y="66" text-anchor="middle" font-family="Courier Prime, monospace" font-size="15" fill="#8C1A30">RJ</text>
+    <text x="60" y="84" text-anchor="middle" font-family="Courier Prime, monospace" font-size="8.5" fill="#8C1A30" letter-spacing="1">SAÍDA</text>
   </svg>
 
   <svg class="carimbo-solto" style="bottom:120px; left:10px; width:100px; height:100px; --rot:-12deg" viewBox="0 0 120 120" aria-hidden="true">
-    <rect x="10" y="30" width="100" height="60" fill="none" stroke="#4A7FBF" stroke-width="2.4"/>
-    <rect x="16" y="36" width="88" height="48" fill="none" stroke="#4A7FBF" stroke-width=".8"/>
-    <text x="60" y="55" text-anchor="middle" font-family="Courier Prime, monospace" font-size="9" fill="#4A7FBF" letter-spacing=".8">STO ANTÔNIO</text>
-    <text x="60" y="68" text-anchor="middle" font-family="Courier Prime, monospace" font-size="9" fill="#4A7FBF" letter-spacing=".8">DO GRAMA</text>
-    <text x="60" y="79" text-anchor="middle" font-family="Courier Prime, monospace" font-size="8" fill="#4A7FBF">MG · SAÍDA</text>
+    <rect x="10" y="30" width="100" height="60" fill="none" stroke="#9B6575" stroke-width="2.4"/>
+    <rect x="16" y="36" width="88" height="48" fill="none" stroke="#9B6575" stroke-width=".8"/>
+    <text x="60" y="55" text-anchor="middle" font-family="Courier Prime, monospace" font-size="9" fill="#9B6575" letter-spacing=".8">STO ANTÔNIO</text>
+    <text x="60" y="68" text-anchor="middle" font-family="Courier Prime, monospace" font-size="9" fill="#9B6575" letter-spacing=".8">DO GRAMA</text>
+    <text x="60" y="79" text-anchor="middle" font-family="Courier Prime, monospace" font-size="8" fill="#9B6575">MG · SAÍDA</text>
   </svg>
 </section>
 
@@ -896,14 +896,14 @@ body{
 
       <svg class="carimbo-aprovado" viewBox="0 0 140 140" aria-hidden="true">
         <g transform="rotate(-16 70 70)" opacity=".8">
-          <circle cx="70" cy="70" r="62" fill="none" stroke="#8FB4DB" stroke-width="3"/>
-          <circle cx="70" cy="70" r="53" fill="none" stroke="#8FB4DB" stroke-width="1.2"/>
+          <circle cx="70" cy="70" r="62" fill="none" stroke="#C9909E" stroke-width="3"/>
+          <circle cx="70" cy="70" r="53" fill="none" stroke="#C9909E" stroke-width="1.2"/>
           <path id="arcoAp" d="M70 70 m -40 0 a 40 40 0 1 1 80 0" fill="none"/>
-          <text font-family="Courier Prime, monospace" font-size="10" fill="#8FB4DB" letter-spacing="2.4">
+          <text font-family="Courier Prime, monospace" font-size="10" fill="#C9909E" letter-spacing="2.4">
             <textPath href="#arcoAp" startOffset="50%" text-anchor="middle">LAGOA SANTA MG</textPath>
           </text>
-          <text x="70" y="76" text-anchor="middle" font-family="Courier Prime, monospace" font-size="17" font-weight="700" fill="#8FB4DB">APROVADO</text>
-          <text x="70" y="94" text-anchor="middle" font-family="Courier Prime, monospace" font-size="10" fill="#8FB4DB" letter-spacing="1.5">12·06·2027</text>
+          <text x="70" y="76" text-anchor="middle" font-family="Courier Prime, monospace" font-size="17" font-weight="700" fill="#C9909E">APROVADO</text>
+          <text x="70" y="94" text-anchor="middle" font-family="Courier Prime, monospace" font-size="10" fill="#C9909E" letter-spacing="1.5">12·06·2027</text>
         </g>
       </svg>
 
@@ -959,10 +959,10 @@ body{
   </div>
 
   <svg class="carimbo-solto" style="top:40px; right:18px; width:96px; height:96px; --rot:11deg" viewBox="0 0 120 120" aria-hidden="true">
-    <circle cx="60" cy="60" r="52" fill="none" stroke="#14395E" stroke-width="2.2" stroke-dasharray="5 3"/>
-    <text x="60" y="52" text-anchor="middle" font-family="Courier Prime, monospace" font-size="11" fill="#14395E">12 JUN</text>
-    <text x="60" y="70" text-anchor="middle" font-family="Courier Prime, monospace" font-size="15" fill="#14395E">2027</text>
-    <text x="60" y="84" text-anchor="middle" font-family="Courier Prime, monospace" font-size="7.5" fill="#14395E" letter-spacing="1">SÁBADO</text>
+    <circle cx="60" cy="60" r="52" fill="none" stroke="#4A0E1A" stroke-width="2.2" stroke-dasharray="5 3"/>
+    <text x="60" y="52" text-anchor="middle" font-family="Courier Prime, monospace" font-size="11" fill="#4A0E1A">12 JUN</text>
+    <text x="60" y="70" text-anchor="middle" font-family="Courier Prime, monospace" font-size="15" fill="#4A0E1A">2027</text>
+    <text x="60" y="84" text-anchor="middle" font-family="Courier Prime, monospace" font-size="7.5" fill="#4A0E1A" letter-spacing="1">SÁBADO</text>
   </svg>
 </section>
 
