@@ -1,0 +1,1186 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Victoria &amp; Maurilio · 12.06.2027</title>
+<meta name="description" content="Convite de casamento de Victoria e Maurilio. Sábado, 12 de junho de 2027, às 17h, no Santuário Nossa Senhora da Saúde, Lagoa Santa - MG.">
+
+<!-- Mantém o convite fora dos buscadores. O link continua funcionando
+     normalmente para quem recebe; só não aparece em pesquisas do Google. -->
+<meta name="robots" content="noindex, nofollow">
+
+<!-- Prévia ao compartilhar o link no WhatsApp, Instagram, etc. -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Victoria & Maurilio · 12.06.2027">
+<meta property="og:description" content="Sábado, 17h · Santuário Nossa Senhora da Saúde · Lagoa Santa, MG. Abra seu passaporte e confirme o embarque.">
+<meta property="og:locale" content="pt_BR">
+<!-- Depois de hospedar, descomente as duas linhas abaixo e troque pelo seu endereço.
+     A imagem precisa ser uma URL completa, de preferência 1200x630px. -->
+<!-- <meta property="og:url" content="https://SEU-ENDERECO-AQUI/"> -->
+<!-- <meta property="og:image" content="https://SEU-ENDERECO-AQUI/previa.jpg"> -->
+<meta name="twitter:card" content="summary_large_image">
+
+<!-- ============================================================
+     ALTERE AQUI OS DADOS PRINCIPAIS
+     ============================================================ -->
+<script>
+const CONVITE = {
+  formulario: "https://forms.gle/COLE-SEU-LINK-AQUI",  // <<< TROQUE pelo link do seu Google Forms
+  prazoRsvp:  "12 de maio de 2027",
+  pix:        "113.716.896-01",
+  dataHora:   "2027-06-12T17:00:00-03:00",
+  mapa:       "https://maps.google.com/?q=Santu%C3%A1rio+Nossa+Senhora+da+Sa%C3%BAde+Lagoa+Santa+MG"
+};
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+<style>
+/* ============================================================
+   TOKENS
+   ============================================================ */
+:root{
+  --navy:      #0B1D3A;
+  --petroleo:  #14395E;
+  --royal:     #1F4E8C;
+  --azul-med:  #4A7FBF;
+  --azul-pale: #8FB4DB;
+  --gelo:      #E3ECF7;
+  --papel:     #EEF4FB;
+  --ouro:      #C9A227;
+  --ouro-claro:#E4C765;
+  --tinta:     #0E2340;
+
+  --serif: "Playfair Display", Georgia, serif;
+  --mono:  "Courier Prime", "Courier New", monospace;
+
+  --pagina: 640px;
+}
+
+*,*::before,*::after{ box-sizing:border-box; }
+
+html{ scroll-behavior:smooth; }
+
+body{
+  margin:0;
+  background:var(--navy);
+  color:var(--tinta);
+  font-family:var(--serif);
+  font-size:17px;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+
+:focus-visible{
+  outline:2px solid var(--ouro);
+  outline-offset:3px;
+}
+
+@media (prefers-reduced-motion: reduce){
+  html{ scroll-behavior:auto; }
+  *,*::before,*::after{
+    animation-duration:.01ms !important;
+    animation-iteration-count:1 !important;
+    transition-duration:.01ms !important;
+  }
+}
+
+/* ============================================================
+   ESTRUTURA DE PÁGINA
+   ============================================================ */
+.pagina{
+  position:relative;
+  padding:72px 22px 80px;
+  overflow:hidden;
+}
+.miolo{
+  max-width:var(--pagina);
+  margin:0 auto;
+  position:relative;
+  z-index:2;
+}
+
+/* guilloché de fundo das páginas internas */
+.pagina--papel{
+  background:var(--papel);
+}
+.pagina--gelo{
+  background:var(--gelo);
+}
+.pagina--papel::before,
+.pagina--gelo::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background-image:
+    repeating-radial-gradient(circle at 18% 22%, transparent 0 13px, var(--azul-pale) 13px 13.7px),
+    repeating-radial-gradient(circle at 84% 78%, transparent 0 17px, var(--azul-pale) 17px 17.7px);
+  opacity:.13;
+  pointer-events:none;
+}
+.pagina--escura{
+  background:var(--petroleo);
+  color:var(--gelo);
+}
+.pagina--escura::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background-image:repeating-linear-gradient(115deg, transparent 0 9px, rgba(143,180,219,.18) 9px 10px);
+  opacity:.5;
+  pointer-events:none;
+}
+
+/* carimbo de cidade no canto da página (marca d'água) */
+.marca-rota{
+  position:absolute;
+  right:-40px; top:50%;
+  transform:translateY(-50%);
+  width:260px; height:260px;
+  opacity:.09;
+  pointer-events:none;
+  z-index:1;
+}
+
+/* ============================================================
+   TÍTULOS DE SEÇÃO — estilo cabeçalho de página de passaporte
+   ============================================================ */
+.cabeca{
+  display:flex;
+  align-items:baseline;
+  gap:14px;
+  border-bottom:1px solid var(--azul-pale);
+  padding-bottom:10px;
+  margin-bottom:34px;
+}
+.cabeca h2{
+  font-size:clamp(1.45rem, 5.5vw, 1.95rem);
+  font-weight:600;
+  margin:0;
+  letter-spacing:.01em;
+  color:var(--petroleo);
+}
+.pagina--escura .cabeca{ border-bottom-color:rgba(143,180,219,.4); }
+.pagina--escura .cabeca h2{ color:var(--gelo); }
+.cabeca .folio{
+  font-family:var(--mono);
+  font-size:.74rem;
+  letter-spacing:.14em;
+  color:var(--azul-med);
+  margin-left:auto;
+  white-space:nowrap;
+}
+
+/* ============================================================
+   1. CAPA
+   ============================================================ */
+.capa{
+  min-height:100svh;
+  display:grid;
+  place-items:center;
+  background:
+    radial-gradient(ellipse at 50% 32%, #16305A 0%, var(--navy) 62%, #061229 100%);
+  padding:40px 20px;
+  position:relative;
+}
+/* textura de couro */
+.capa::after{
+  content:"";
+  position:absolute; inset:0;
+  background-image:
+    repeating-linear-gradient(48deg, rgba(255,255,255,.022) 0 2px, transparent 2px 5px),
+    repeating-linear-gradient(-42deg, rgba(0,0,0,.05) 0 3px, transparent 3px 7px);
+  pointer-events:none;
+}
+.capa-moldura{
+  position:relative;
+  z-index:2;
+  width:min(430px, 92vw);
+  padding:52px 30px 44px;
+  border:1.5px solid rgba(201,162,39,.75);
+  outline:1px solid rgba(201,162,39,.32);
+  outline-offset:7px;
+  text-align:center;
+  animation:abrir 1.5s cubic-bezier(.16,.8,.3,1) both;
+}
+@keyframes abrir{
+  from{ opacity:0; transform:translateY(22px) scale(.975); }
+  to  { opacity:1; transform:none; }
+}
+.capa-selo{
+  font-family:var(--mono);
+  font-size:.7rem;
+  letter-spacing:.42em;
+  color:var(--ouro-claro);
+  text-indent:.42em;
+  margin:0 0 4px;
+}
+.capa-titulo{
+  font-size:clamp(1.9rem, 8vw, 2.6rem);
+  font-weight:500;
+  letter-spacing:.3em;
+  text-indent:.3em;
+  color:var(--ouro-claro);
+  margin:0;
+  line-height:1.1;
+}
+.capa-sub{
+  font-family:var(--mono);
+  font-size:.66rem;
+  letter-spacing:.2em;
+  color:rgba(227,236,247,.68);
+  margin:12px 0 0;
+}
+.brasao{
+  width:150px; height:150px;
+  margin:34px auto 30px;
+  display:block;
+}
+.capa-nomes{
+  font-size:clamp(1.5rem, 6.5vw, 2rem);
+  font-weight:400;
+  color:var(--gelo);
+  margin:0;
+  line-height:1.35;
+}
+.capa-nomes .e{
+  display:block;
+  font-style:italic;
+  font-size:.62em;
+  color:var(--ouro);
+  margin:2px 0;
+}
+.capa-data{
+  font-family:var(--mono);
+  font-size:.82rem;
+  letter-spacing:.24em;
+  color:var(--azul-pale);
+  margin:20px 0 0;
+}
+
+.btn{
+  display:inline-block;
+  font-family:var(--mono);
+  font-size:.78rem;
+  letter-spacing:.17em;
+  text-decoration:none;
+  padding:14px 30px;
+  border:1px solid var(--ouro);
+  color:var(--ouro-claro);
+  background:transparent;
+  cursor:pointer;
+  transition:background .35s ease, color .35s ease, box-shadow .35s ease;
+}
+.btn:hover,.btn:focus-visible{
+  background:var(--ouro);
+  color:var(--navy);
+  box-shadow:0 0 22px rgba(201,162,39,.35);
+}
+.capa-moldura .btn{ margin-top:34px; }
+
+.rolagem{
+  position:absolute;
+  bottom:26px; left:50%;
+  transform:translateX(-50%);
+  font-family:var(--mono);
+  font-size:.6rem;
+  letter-spacing:.3em;
+  color:rgba(143,180,219,.55);
+  z-index:2;
+}
+
+/* ============================================================
+   2. IDENTIFICAÇÃO
+   ============================================================ */
+.identidade{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:26px;
+}
+@media (max-width:540px){ .identidade{ grid-template-columns:1fr; } }
+
+.retrato{
+  aspect-ratio:3/4;
+  border:1px solid var(--azul-med);
+  background:
+    linear-gradient(140deg, rgba(143,180,219,.22), rgba(227,236,247,.5));
+  display:grid;
+  place-items:center;
+  position:relative;
+  overflow:hidden;
+}
+.retrato img{
+  width:100%; height:100%;
+  object-fit:cover;
+  display:block;
+}
+.retrato-vazio{
+  font-family:var(--mono);
+  font-size:.62rem;
+  letter-spacing:.16em;
+  color:var(--royal);
+  text-align:center;
+  opacity:.65;
+  padding:0 10px;
+}
+.retrato::after{
+  content:"";
+  position:absolute; inset:0;
+  background:repeating-linear-gradient(-38deg, transparent 0 11px, rgba(31,78,140,.09) 11px 12px);
+  pointer-events:none;
+}
+
+.ficha{ margin-top:16px; }
+.campo{
+  border-bottom:1px dotted var(--azul-pale);
+  padding:9px 0 6px;
+}
+.campo dt{
+  font-family:var(--mono);
+  font-size:.6rem;
+  letter-spacing:.15em;
+  color:var(--azul-med);
+  margin:0 0 2px;
+}
+.campo dd{
+  margin:0;
+  font-size:1.02rem;
+  color:var(--petroleo);
+}
+.campo dd.destaque{
+  font-size:1.2rem;
+  font-weight:600;
+}
+
+.mrz{
+  margin-top:38px;
+  background:#fff;
+  border-top:1px solid var(--azul-pale);
+  padding:14px 12px;
+  font-family:var(--mono);
+  font-size:clamp(.5rem, 2.55vw, .8rem);
+  line-height:1.85;
+  letter-spacing:.06em;
+  color:var(--navy);
+  white-space:nowrap;
+  overflow-x:auto;
+  -webkit-overflow-scrolling:touch;
+}
+.mrz span{ display:block; }
+
+/* ============================================================
+   3. VISTO
+   ============================================================ */
+.visto{
+  position:relative;
+  border:1px solid rgba(201,162,39,.55);
+  padding:38px 26px 34px;
+  background:rgba(11,29,58,.4);
+}
+.visto-tipo{
+  font-family:var(--mono);
+  font-size:.64rem;
+  letter-spacing:.3em;
+  color:var(--ouro);
+  margin:0 0 20px;
+}
+.visto-local{
+  font-size:clamp(1.35rem, 5.6vw, 1.8rem);
+  font-weight:500;
+  margin:0 0 6px;
+  color:#fff;
+  line-height:1.25;
+}
+.visto-end{
+  font-size:1rem;
+  color:var(--azul-pale);
+  margin:0 0 26px;
+}
+.visto-linhas{
+  display:flex;
+  flex-wrap:wrap;
+  gap:24px 38px;
+  border-top:1px solid rgba(143,180,219,.3);
+  padding-top:22px;
+}
+.visto-linhas div span{
+  display:block;
+  font-family:var(--mono);
+  font-size:.6rem;
+  letter-spacing:.16em;
+  color:var(--azul-pale);
+  margin-bottom:4px;
+}
+.visto-linhas div strong{
+  font-weight:500;
+  font-size:1.22rem;
+  color:#fff;
+}
+.carimbo-aprovado{
+  position:absolute;
+  right:6px; bottom:-18px;
+  width:132px; height:132px;
+  pointer-events:none;
+}
+@media (max-width:540px){
+  .carimbo-aprovado{ width:104px; height:104px; right:-6px; bottom:-14px; }
+}
+.visto .btn{ margin-top:30px; }
+
+/* ============================================================
+   4. ITINERÁRIO
+   ============================================================ */
+.itinerario{
+  list-style:none;
+  margin:0; padding:0 0 0 30px;
+  position:relative;
+}
+.itinerario::before{
+  content:"";
+  position:absolute;
+  left:5px; top:8px; bottom:10px;
+  width:2px;
+  background:linear-gradient(to bottom, var(--petroleo), var(--azul-pale));
+}
+.itinerario li{
+  position:relative;
+  padding:0 0 30px 6px;
+}
+.itinerario li::before{
+  content:"";
+  position:absolute;
+  left:-29px; top:8px;
+  width:12px; height:12px;
+  border-radius:50%;
+  background:var(--papel);
+  border:2px solid var(--royal);
+}
+.itinerario li:last-child{ padding-bottom:0; }
+.itinerario li:last-child::before{ background:var(--royal); }
+.hora{
+  font-family:var(--mono);
+  font-size:.86rem;
+  letter-spacing:.1em;
+  color:var(--royal);
+  display:block;
+}
+.etapa{
+  font-size:1.14rem;
+  color:var(--petroleo);
+  margin:1px 0 0;
+}
+.etapa small{
+  display:block;
+  font-size:.86rem;
+  color:var(--azul-med);
+  font-style:italic;
+}
+
+/* ============================================================
+   5. CARTÃO DE EMBARQUE
+   ============================================================ */
+.embarque{
+  display:flex;
+  background:#fff;
+  box-shadow:0 18px 40px rgba(11,29,58,.16);
+  position:relative;
+}
+@media (max-width:620px){ .embarque{ flex-direction:column; } }
+
+.embarque-faixa{
+  background:var(--navy);
+  color:var(--gelo);
+  padding:11px 20px;
+  font-family:var(--mono);
+  font-size:.62rem;
+  letter-spacing:.24em;
+  display:flex;
+  justify-content:space-between;
+  gap:12px;
+}
+.embarque-corpo{ flex:1 1 auto; }
+.embarque-dados{
+  padding:24px 22px 26px;
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(118px,1fr));
+  gap:20px 18px;
+}
+.dado span{
+  display:block;
+  font-family:var(--mono);
+  font-size:.57rem;
+  letter-spacing:.15em;
+  color:var(--azul-med);
+  margin-bottom:3px;
+}
+.dado strong{
+  font-weight:500;
+  font-size:1.05rem;
+  color:var(--petroleo);
+}
+.dado.largo{ grid-column:1 / -1; }
+.dado.largo strong{ font-size:1.3rem; }
+
+.canhoto{
+  flex:0 0 168px;
+  border-left:2px dashed var(--azul-pale);
+  padding:0;
+  display:flex;
+  flex-direction:column;
+}
+@media (max-width:620px){
+  .canhoto{
+    flex:0 0 auto;
+    border-left:0;
+    border-top:2px dashed var(--azul-pale);
+  }
+}
+.canhoto-dados{
+  padding:22px 18px;
+  display:grid;
+  gap:16px;
+}
+.barras{
+  height:54px;
+  margin:auto 18px 20px;
+  background:repeating-linear-gradient(90deg,
+    var(--navy) 0 2px, transparent 2px 4px,
+    var(--navy) 4px 7px, transparent 7px 9px,
+    var(--navy) 9px 10px, transparent 10px 14px);
+}
+.barras-codigo{
+  font-family:var(--mono);
+  font-size:.56rem;
+  letter-spacing:.2em;
+  color:var(--azul-med);
+  text-align:center;
+  margin:-14px 0 16px;
+}
+
+/* ============================================================
+   6. BAGAGEM
+   ============================================================ */
+.bagagem{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(230px,1fr));
+  gap:30px 22px;
+  margin-top:8px;
+}
+.etiqueta{
+  position:relative;
+  padding:26px 22px 24px;
+  color:#fff;
+  margin-top:20px;
+}
+.etiqueta::before{ /* furo */
+  content:"";
+  position:absolute;
+  top:-9px; left:50%;
+  transform:translateX(-50%);
+  width:16px; height:16px;
+  border-radius:50%;
+  background:var(--papel);
+  border:1px solid rgba(255,255,255,.5);
+  z-index:2;
+}
+.etiqueta::after{ /* cordão */
+  content:"";
+  position:absolute;
+  top:-20px; left:50%;
+  transform:translateX(-50%);
+  width:1px; height:20px;
+  background:var(--azul-med);
+}
+.etiqueta:nth-child(1){ background:var(--navy); }
+.etiqueta:nth-child(2){ background:var(--petroleo); }
+.etiqueta:nth-child(3){ background:var(--royal); }
+.etiqueta:nth-child(4){ background:#2C639E; }
+.etiqueta h3{
+  font-family:var(--mono);
+  font-size:.62rem;
+  letter-spacing:.2em;
+  font-weight:400;
+  color:var(--azul-pale);
+  margin:0 0 9px;
+}
+.etiqueta p{
+  margin:0;
+  font-size:1.04rem;
+  line-height:1.5;
+}
+.etiqueta .pix{
+  font-family:var(--mono);
+  font-size:.95rem;
+  letter-spacing:.04em;
+  display:block;
+  margin-top:8px;
+  color:var(--ouro-claro);
+}
+.copiar{
+  margin-top:14px;
+  font-family:var(--mono);
+  font-size:.62rem;
+  letter-spacing:.14em;
+  background:transparent;
+  border:1px solid rgba(201,162,39,.65);
+  color:var(--ouro-claro);
+  padding:8px 15px;
+  cursor:pointer;
+  transition:background .3s, color .3s;
+}
+.copiar:hover,.copiar:focus-visible{ background:var(--ouro); color:var(--navy); }
+
+/* ============================================================
+   7. RSVP
+   ============================================================ */
+.controle{
+  position:relative;
+  border:1px solid rgba(201,162,39,.55);
+  padding:36px 26px 34px;
+  background:rgba(11,29,58,.4);
+  max-width:520px;
+}
+.controle-texto{
+  margin:0 0 8px;
+  max-width:40ch;
+  color:var(--azul-pale);
+  font-size:1.04rem;
+}
+.controle-prazo{
+  font-family:var(--mono);
+  font-size:.66rem;
+  letter-spacing:.16em;
+  color:var(--ouro-claro);
+  margin:22px 0 0;
+}
+.controle .btn{ margin-top:26px; }
+.carimbo-controle{
+  --rot:0deg;
+  position:absolute;
+  right:-4px; bottom:-20px;
+  width:128px; height:128px;
+  opacity:0;
+  pointer-events:none;
+}
+.carimbo-controle.dentro{
+  animation:bater-solto .5s cubic-bezier(.2,.9,.3,1.1) .35s both;
+}
+@media (max-width:540px){
+  .carimbo-controle{ width:100px; height:100px; right:-10px; bottom:-14px; }
+}
+
+/* ============================================================
+   8. RODAPÉ / CONTAGEM
+   ============================================================ */
+.rodape{
+  background:var(--navy);
+  color:var(--gelo);
+  text-align:center;
+  padding:74px 22px 60px;
+}
+.painel{
+  display:flex;
+  justify-content:center;
+  gap:10px;
+  flex-wrap:wrap;
+  margin:0 0 34px;
+}
+.flap{
+  min-width:74px;
+  background:linear-gradient(to bottom, #16294A 0 49%, #0A1729 51% 100%);
+  border:1px solid rgba(143,180,219,.22);
+  padding:14px 10px 10px;
+  position:relative;
+}
+.flap::after{
+  content:"";
+  position:absolute;
+  left:0; right:0; top:50%;
+  height:1px;
+  background:rgba(0,0,0,.55);
+}
+.flap b{
+  display:block;
+  font-family:var(--mono);
+  font-size:1.85rem;
+  font-weight:700;
+  color:var(--gelo);
+  line-height:1;
+  font-variant-numeric:tabular-nums;
+}
+.flap span{
+  display:block;
+  font-family:var(--mono);
+  font-size:.53rem;
+  letter-spacing:.17em;
+  color:var(--azul-pale);
+  margin-top:9px;
+}
+.rodape-frase{
+  font-size:clamp(1.25rem,5vw,1.6rem);
+  font-style:italic;
+  color:var(--ouro-claro);
+  margin:0 auto 10px;
+  max-width:22ch;
+  line-height:1.45;
+}
+.rodape-assinatura{
+  font-family:var(--mono);
+  font-size:.62rem;
+  letter-spacing:.24em;
+  color:rgba(143,180,219,.6);
+  margin:26px 0 0;
+}
+
+/* ============================================================
+   ENTRADA DAS SEÇÕES
+   ============================================================ */
+.revela{
+  opacity:0;
+  transform:translateY(16px);
+  transition:opacity .7s ease, transform .7s cubic-bezier(.2,.7,.3,1);
+}
+.revela.dentro{ opacity:1; transform:none; }
+
+.carimbo-solto{
+  --rot:0deg;
+  position:absolute;
+  pointer-events:none;
+  opacity:0;
+  transform:rotate(var(--rot));
+}
+.carimbo-solto.dentro{
+  animation:bater-solto .5s cubic-bezier(.2,.9,.3,1.1) both;
+}
+@keyframes bater-solto{
+  0%  { opacity:0;   transform:rotate(var(--rot)) scale(1.4); }
+  60% { opacity:.66; transform:rotate(var(--rot)) scale(.94); }
+  100%{ opacity:.6;  transform:rotate(var(--rot)) scale(1); }
+}
+</style>
+</head>
+<body>
+
+<!-- ========================= 1. CAPA ========================= -->
+<header class="capa" id="capa">
+  <div class="capa-moldura">
+    <p class="capa-selo">República do Amor Eterno</p>
+    <h1 class="capa-titulo">Passaporte</h1>
+    <p class="capa-sub">Certidão de viagem do amor · Tipo C · Brasil</p>
+
+    <svg class="brasao" viewBox="0 0 120 120" aria-hidden="true">
+      <!-- coroa de louros -->
+      <g stroke="#C9A227" fill="none" stroke-width="1.1" stroke-linecap="round">
+        <path d="M60 111 C 34 104, 20 84, 21 58"/>
+        <path d="M60 111 C 86 104, 100 84, 99 58"/>
+        <g opacity=".95">
+          <path d="M26 82 c -9 -4 -12 -12 -11 -18 c 8 0 14 6 15 15"/>
+          <path d="M23 66 c -9 -3 -12 -11 -11 -17 c 8 0 14 5 15 14"/>
+          <path d="M32 95 c -9 -4 -11 -12 -10 -18 c 8 1 13 6 14 15"/>
+          <path d="M42 104 c -8 -5 -10 -13 -8 -19 c 8 2 12 8 12 17"/>
+          <path d="M94 82 c 9 -4 12 -12 11 -18 c -8 0 -14 6 -15 15"/>
+          <path d="M97 66 c 9 -3 12 -11 11 -17 c -8 0 -14 5 -15 14"/>
+          <path d="M88 95 c 9 -4 11 -12 10 -18 c -8 1 -13 6 -14 15"/>
+          <path d="M78 104 c 8 -5 10 -13 8 -19 c -8 2 -12 8 -12 17"/>
+        </g>
+      </g>
+      <!-- avião no topo -->
+      <g fill="#C9A227" transform="translate(60 21) rotate(-45) scale(.95)">
+        <path d="M0 -13 L2.4 -4 L13 2.4 L13 5 L2.4 2.6 L1.4 9.6 L4.6 12 L4.6 13.6 L0 12.3 L-4.6 13.6 L-4.6 12 L-1.4 9.6 L-2.4 2.6 L-13 5 L-13 2.4 L-2.4 -4 Z"/>
+      </g>
+      <!-- monograma -->
+      <text x="60" y="76" text-anchor="middle" font-family="Playfair Display, serif"
+            font-size="36" fill="#E3ECF7" letter-spacing="1">V</text>
+      <text x="60" y="76" text-anchor="middle" font-family="Playfair Display, serif"
+            font-size="36" fill="#E3ECF7" letter-spacing="1" dx="30">M</text>
+      <text x="60" y="74" text-anchor="middle" font-family="Playfair Display, serif"
+            font-size="22" font-style="italic" fill="#C9A227" dx="15">&amp;</text>
+    </svg>
+
+    <p class="capa-nomes">Victoria<span class="e">e</span>Maurilio</p>
+    <p class="capa-data">12 · 06 · 2027</p>
+
+    <a class="btn" href="#identificacao">Abrir passaporte</a>
+  </div>
+  <p class="rolagem">role para embarcar</p>
+</header>
+
+<!-- ==================== 2. IDENTIFICAÇÃO ==================== -->
+<section class="pagina pagina--papel" id="identificacao">
+  <div class="miolo revela">
+    <div class="cabeca">
+      <h2>Titulares</h2>
+      <span class="folio">Página 02</span>
+    </div>
+
+    <div class="identidade">
+      <!-- Para colocar a foto: troque o bloco .retrato-vazio por <img src="victoria.jpg" alt="Victoria"> -->
+      <div>
+        <div class="retrato">
+          <p class="retrato-vazio">foto de Victoria</p>
+        </div>
+        <dl class="ficha">
+          <div class="campo"><dt>Nome</dt><dd class="destaque">Victoria</dd></div>
+          <div class="campo"><dt>Origem</dt><dd>Rio de Janeiro · RJ</dd></div>
+          <div class="campo"><dt>Nacionalidade</dt><dd>Carioca</dd></div>
+        </dl>
+      </div>
+
+      <div>
+        <div class="retrato">
+          <p class="retrato-vazio">foto de Maurilio</p>
+        </div>
+        <dl class="ficha">
+          <div class="campo"><dt>Nome</dt><dd class="destaque">Maurilio</dd></div>
+          <div class="campo"><dt>Origem</dt><dd>Santo Antônio do Grama · MG</dd></div>
+          <div class="campo"><dt>Nacionalidade</dt><dd>Mineira</dd></div>
+        </dl>
+      </div>
+    </div>
+
+    <dl class="ficha" style="margin-top:34px">
+      <div class="campo"><dt>Destino final</dt><dd class="destaque">Lagoa Santa · Minas Gerais</dd></div>
+      <div class="campo"><dt>Data de partida</dt><dd>Sábado, 12 de junho de 2027</dd></div>
+      <div class="campo"><dt>Validade</dt><dd>Para sempre</dd></div>
+    </dl>
+
+    <div class="mrz" aria-hidden="true">
+      <span>P&lt;BRAVICTORIA&lt;&lt;MAURILIO&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;</span>
+      <span>12062027BRA&lt;&lt;LAGOA&lt;SANTA&lt;MG&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;0</span>
+    </div>
+  </div>
+
+  <!-- carimbos -->
+  <svg class="carimbo-solto" style="top:54px; right:14px; width:108px; height:108px; --rot:14deg" viewBox="0 0 120 120" aria-hidden="true">
+    <circle cx="60" cy="60" r="55" fill="none" stroke="#1F4E8C" stroke-width="2.4"/>
+    <circle cx="60" cy="60" r="47" fill="none" stroke="#1F4E8C" stroke-width="1"/>
+    <path id="arco1" d="M60 60 m -37 0 a 37 37 0 1 1 74 0" fill="none"/>
+    <text font-family="Courier Prime, monospace" font-size="10.5" fill="#1F4E8C" letter-spacing="1.4">
+      <textPath href="#arco1" startOffset="50%" text-anchor="middle">RIO DE JANEIRO</textPath>
+    </text>
+    <text x="60" y="66" text-anchor="middle" font-family="Courier Prime, monospace" font-size="15" fill="#1F4E8C">RJ</text>
+    <text x="60" y="84" text-anchor="middle" font-family="Courier Prime, monospace" font-size="8.5" fill="#1F4E8C" letter-spacing="1">SAÍDA</text>
+  </svg>
+
+  <svg class="carimbo-solto" style="bottom:120px; left:10px; width:100px; height:100px; --rot:-12deg" viewBox="0 0 120 120" aria-hidden="true">
+    <rect x="10" y="30" width="100" height="60" fill="none" stroke="#4A7FBF" stroke-width="2.4"/>
+    <rect x="16" y="36" width="88" height="48" fill="none" stroke="#4A7FBF" stroke-width=".8"/>
+    <text x="60" y="55" text-anchor="middle" font-family="Courier Prime, monospace" font-size="9" fill="#4A7FBF" letter-spacing=".8">STO ANTÔNIO</text>
+    <text x="60" y="68" text-anchor="middle" font-family="Courier Prime, monospace" font-size="9" fill="#4A7FBF" letter-spacing=".8">DO GRAMA</text>
+    <text x="60" y="79" text-anchor="middle" font-family="Courier Prime, monospace" font-size="8" fill="#4A7FBF">MG · SAÍDA</text>
+  </svg>
+</section>
+
+<!-- ======================== 3. VISTO ======================== -->
+<section class="pagina pagina--escura" id="cerimonia">
+  <div class="miolo revela">
+    <div class="cabeca">
+      <h2>Visto de entrada</h2>
+      <span class="folio">Página 03</span>
+    </div>
+
+    <div class="visto">
+      <p class="visto-tipo">Cerimônia religiosa</p>
+      <p class="visto-local">Santuário Nossa Senhora da Saúde</p>
+      <p class="visto-end">Centro · Lagoa Santa · Minas Gerais</p>
+
+      <div class="visto-linhas">
+        <div><span>Data</span><strong>12 jun 2027</strong></div>
+        <div><span>Dia</span><strong>Sábado</strong></div>
+        <div><span>Horário</span><strong>17h00</strong></div>
+      </div>
+
+      <svg class="carimbo-aprovado" viewBox="0 0 140 140" aria-hidden="true">
+        <g transform="rotate(-16 70 70)" opacity=".8">
+          <circle cx="70" cy="70" r="62" fill="none" stroke="#8FB4DB" stroke-width="3"/>
+          <circle cx="70" cy="70" r="53" fill="none" stroke="#8FB4DB" stroke-width="1.2"/>
+          <path id="arcoAp" d="M70 70 m -40 0 a 40 40 0 1 1 80 0" fill="none"/>
+          <text font-family="Courier Prime, monospace" font-size="10" fill="#8FB4DB" letter-spacing="2.4">
+            <textPath href="#arcoAp" startOffset="50%" text-anchor="middle">LAGOA SANTA MG</textPath>
+          </text>
+          <text x="70" y="76" text-anchor="middle" font-family="Courier Prime, monospace" font-size="17" font-weight="700" fill="#8FB4DB">APROVADO</text>
+          <text x="70" y="94" text-anchor="middle" font-family="Courier Prime, monospace" font-size="10" fill="#8FB4DB" letter-spacing="1.5">12·06·2027</text>
+        </g>
+      </svg>
+
+      <a class="btn" id="btnMapa" href="#" target="_blank" rel="noopener">Ver no mapa</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 4. ITINERÁRIO ====================== -->
+<section class="pagina pagina--gelo" id="itinerario">
+  <div class="miolo revela">
+    <div class="cabeca">
+      <h2>Itinerário do dia</h2>
+      <span class="folio">Página 04</span>
+    </div>
+
+    <ol class="itinerario">
+      <li>
+        <span class="hora">16h30</span>
+        <p class="etapa">Chegada dos convidados
+          <small>Vá com calma, o santuário fica no Centro</small>
+        </p>
+      </li>
+      <li>
+        <span class="hora">17h00</span>
+        <p class="etapa">Cerimônia
+          <small>Santuário Nossa Senhora da Saúde</small>
+        </p>
+      </li>
+      <li>
+        <span class="hora">18h15</span>
+        <p class="etapa">Fotos com os noivos
+          <small>Família e padrinhos primeiro, depois todo mundo</small>
+        </p>
+      </li>
+      <li>
+        <span class="hora">19h00</span>
+        <p class="etapa">Recepção
+          <small>Bem-vindos, brindes e cumprimentos</small>
+        </p>
+      </li>
+      <li>
+        <span class="hora">20h00</span>
+        <p class="etapa">Jantar</p>
+      </li>
+      <li>
+        <span class="hora">21h30</span>
+        <p class="etapa">Festa
+          <small>Até o último voo da noite</small>
+        </p>
+      </li>
+    </ol>
+  </div>
+
+  <svg class="carimbo-solto" style="top:40px; right:18px; width:96px; height:96px; --rot:11deg" viewBox="0 0 120 120" aria-hidden="true">
+    <circle cx="60" cy="60" r="52" fill="none" stroke="#14395E" stroke-width="2.2" stroke-dasharray="5 3"/>
+    <text x="60" y="52" text-anchor="middle" font-family="Courier Prime, monospace" font-size="11" fill="#14395E">12 JUN</text>
+    <text x="60" y="70" text-anchor="middle" font-family="Courier Prime, monospace" font-size="15" fill="#14395E">2027</text>
+    <text x="60" y="84" text-anchor="middle" font-family="Courier Prime, monospace" font-size="7.5" fill="#14395E" letter-spacing="1">SÁBADO</text>
+  </svg>
+</section>
+
+<!-- ================== 5. CARTÃO DE EMBARQUE ================= -->
+<section class="pagina pagina--papel" id="embarque">
+  <div class="miolo revela">
+    <div class="cabeca">
+      <h2>Cartão de embarque</h2>
+      <span class="folio">Página 05</span>
+    </div>
+
+    <div class="embarque">
+      <div class="embarque-corpo">
+        <div class="embarque-faixa">
+          <span>Amor Airlines</span>
+          <span>VM 1206</span>
+        </div>
+        <div class="embarque-dados">
+          <div class="dado largo">
+            <span>Passageiro</span>
+            <strong>Você e quem você ama</strong>
+          </div>
+          <div class="dado">
+            <span>De</span>
+            <strong>RIO · GRM</strong>
+          </div>
+          <div class="dado">
+            <span>Para</span>
+            <strong>LAGOA SANTA</strong>
+          </div>
+          <div class="dado">
+            <span>Data</span>
+            <strong>12 JUN 27</strong>
+          </div>
+          <div class="dado">
+            <span>Embarque</span>
+            <strong>16:30</strong>
+          </div>
+          <div class="dado">
+            <span>Portão</span>
+            <strong>Altar</strong>
+          </div>
+          <div class="dado">
+            <span>Assento</span>
+            <strong>Ao nosso lado</strong>
+          </div>
+        </div>
+      </div>
+
+      <aside class="canhoto">
+        <div class="embarque-faixa" style="justify-content:center;letter-spacing:.3em">Canhoto</div>
+        <div class="canhoto-dados">
+          <div class="dado"><span>Voo</span><strong>VM 1206</strong></div>
+          <div class="dado"><span>Horário</span><strong>17:00</strong></div>
+          <div class="dado"><span>Classe</span><strong>Família</strong></div>
+        </div>
+        <div class="barras" aria-hidden="true"></div>
+        <p class="barras-codigo">VM1206 · 12062027</p>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= 6. BAGAGEM ======================= -->
+<section class="pagina pagina--gelo" id="bagagem">
+  <div class="miolo revela">
+    <div class="cabeca">
+      <h2>Bagagem de mão</h2>
+      <span class="folio">Página 06</span>
+    </div>
+
+    <div class="bagagem">
+      <div class="etiqueta">
+        <h3>Traje</h3>
+        <p>Esporte fino. Junho em Lagoa Santa esfria à noite — leve um casaco na mala.</p>
+      </div>
+
+      <div class="etiqueta">
+        <h3>Presentes</h3>
+        <p>Sua presença já é o melhor destino. Se quiser nos ajudar na próxima viagem, o Pix é:
+          <span class="pix" id="pixTexto">113.716.896-01</span>
+        </p>
+        <button class="copiar" type="button" id="btnPix">Copiar chave Pix</button>
+      </div>
+
+      <div class="etiqueta">
+        <h3>Hospedagem</h3>
+        <p>Lagoa Santa tem pousadas no Centro, a poucos minutos do santuário. Confins fica a 15 minutos, para quem chega de avião.</p>
+      </div>
+
+      <div class="etiqueta">
+        <h3>Estacionamento</h3>
+        <p>Há vagas nas ruas ao redor do santuário. Chegue com alguma folga para não correr até o altar.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================== 7. RSVP ========================= -->
+<section class="pagina pagina--escura" id="confirmacao">
+  <div class="miolo revela">
+    <div class="cabeca">
+      <h2>Controle de passaporte</h2>
+      <span class="folio">Página 07</span>
+    </div>
+
+    <div class="controle">
+      <p class="controle-texto">
+        Todo passageiro passa pelo controle antes de embarcar. Preencha o formulário
+        com seu nome e o número de acompanhantes — leva menos de um minuto.
+      </p>
+      <p class="controle-prazo" id="prazoRsvp">Confirme até 12 de maio de 2027</p>
+
+      <a class="btn" id="btnRsvp" href="#" target="_blank" rel="noopener">Confirmar presença</a>
+
+      <svg class="carimbo-controle" id="carimboControle" viewBox="0 0 140 140" aria-hidden="true">
+        <g transform="rotate(-13 70 70)">
+          <circle cx="70" cy="70" r="62" fill="none" stroke="#C9A227" stroke-width="3"/>
+          <circle cx="70" cy="70" r="53" fill="none" stroke="#C9A227" stroke-width="1.2"/>
+          <path id="arcoCtrl" d="M70 70 m -40 0 a 40 40 0 1 1 80 0" fill="none"/>
+          <text font-family="Courier Prime, monospace" font-size="10" fill="#C9A227" letter-spacing="2.2">
+            <textPath href="#arcoCtrl" startOffset="50%" text-anchor="middle">CONTROLE DE FRONTEIRA</textPath>
+          </text>
+          <text x="70" y="76" text-anchor="middle" font-family="Courier Prime, monospace" font-size="16" font-weight="700" fill="#C9A227">EMBARQUE</text>
+          <text x="70" y="94" text-anchor="middle" font-family="Courier Prime, monospace" font-size="9.5" fill="#C9A227" letter-spacing="1.4">12·06·2027</text>
+        </g>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- ======================== 8. RODAPÉ ======================= -->
+<footer class="rodape">
+  <div class="painel" id="painel" role="timer" aria-live="off">
+    <div class="flap"><b id="d">—</b><span>dias</span></div>
+    <div class="flap"><b id="h">—</b><span>horas</span></div>
+    <div class="flap"><b id="m">—</b><span>min</span></div>
+    <div class="flap"><b id="s">—</b><span>seg</span></div>
+  </div>
+
+  <p class="rodape-frase">Nossa maior viagem começa aqui.</p>
+  <p class="rodape-assinatura">Victoria &amp; Maurilio · Lagoa Santa · MG</p>
+</footer>
+
+<script>
+(function(){
+  "use strict";
+
+  /* ---------- mapa ---------- */
+  document.getElementById("btnMapa").href = CONVITE.mapa;
+
+  /* ---------- revelar seções ---------- */
+  var alvos = document.querySelectorAll(".revela, .carimbo-solto, .carimbo-controle");
+  if ("IntersectionObserver" in window){
+    var obs = new IntersectionObserver(function(entradas){
+      entradas.forEach(function(e){
+        if (e.isIntersecting){
+          e.target.classList.add("dentro");
+          obs.unobserve(e.target);
+        }
+      });
+    }, { threshold:.18, rootMargin:"0px 0px -40px 0px" });
+    alvos.forEach(function(el){ obs.observe(el); });
+  } else {
+    alvos.forEach(function(el){ el.classList.add("dentro"); });
+  }
+
+  /* ---------- RSVP: Google Forms ---------- */
+  document.getElementById("btnRsvp").href = CONVITE.formulario;
+  document.getElementById("prazoRsvp").textContent = "Confirme até " + CONVITE.prazoRsvp;
+
+  /* ---------- copiar Pix ---------- */
+  var btnPix = document.getElementById("btnPix");
+  btnPix.addEventListener("click", function(){
+    var chave = CONVITE.pix;
+    var feito = function(){
+      btnPix.textContent = "Chave copiada";
+      setTimeout(function(){ btnPix.textContent = "Copiar chave Pix"; }, 2600);
+    };
+    if (navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(chave).then(feito).catch(reserva);
+    } else { reserva(); }
+    function reserva(){
+      var t = document.createElement("textarea");
+      t.value = chave; t.setAttribute("readonly","");
+      t.style.position = "absolute"; t.style.left = "-9999px";
+      document.body.appendChild(t); t.select();
+      try { document.execCommand("copy"); feito(); }
+      catch(e){ btnPix.textContent = "Copie: " + chave; }
+      document.body.removeChild(t);
+    }
+  });
+
+  /* ---------- contagem regressiva ---------- */
+  var destino = new Date(CONVITE.dataHora).getTime();
+  var cD = document.getElementById("d"),
+      cH = document.getElementById("h"),
+      cM = document.getElementById("m"),
+      cS = document.getElementById("s");
+
+  function dois(n){ return n < 10 ? "0" + n : String(n); }
+
+  function contar(){
+    var falta = destino - Date.now();
+    if (falta <= 0){
+      document.getElementById("painel").innerHTML =
+        '<div class="flap" style="min-width:auto;padding:16px 26px"><b style="font-size:1.3rem">HOJE É O DIA</b></div>';
+      return;
+    }
+    var seg = Math.floor(falta / 1000);
+    cD.textContent = String(Math.floor(seg / 86400));
+    cH.textContent = dois(Math.floor(seg % 86400 / 3600));
+    cM.textContent = dois(Math.floor(seg % 3600 / 60));
+    cS.textContent = dois(seg % 60);
+    requestAnimationFrame(function(){ setTimeout(contar, 1000); });
+  }
+  contar();
+})();
+</script>
+</body>
+</html>
