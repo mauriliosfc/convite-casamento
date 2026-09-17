@@ -727,6 +727,230 @@ body{
 }
 
 /* ============================================================
+   0. ENVELOPE — introdução
+   ============================================================ */
+
+body.env-ativa{ overflow:hidden; }
+
+.env-cena{
+  position:fixed;
+  inset:0;
+  z-index:9999;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:38px;
+  background:
+    radial-gradient(ellipse at 50% 38%, #4A1020 0%, #2D0610 55%, #160309 100%);
+}
+.env-cena::before{
+  content:"";
+  position:absolute; inset:0;
+  background-image:
+    repeating-linear-gradient(48deg, rgba(255,255,255,.018) 0 2px, transparent 2px 5px),
+    repeating-linear-gradient(-42deg, rgba(0,0,0,.045) 0 3px, transparent 3px 7px);
+  pointer-events:none;
+}
+.env-cena.saindo{
+  animation:envSair .85s ease both;
+  pointer-events:none;
+}
+@keyframes envSair{
+  from{ opacity:1; }
+  to  { opacity:0; }
+}
+
+/* caixa com sombra + animação de entrada */
+.env-caixa{
+  animation:envChegar 1.2s cubic-bezier(.16,.8,.3,1) .2s both;
+}
+@keyframes envChegar{
+  from{ opacity:0; transform:translateY(28px) scale(.97); }
+  to  { opacity:1; transform:none; }
+}
+.env-caixa:not(.aberta){
+  animation:envChegar 1.2s cubic-bezier(.16,.8,.3,1) .2s both,
+            envPulso 3s ease-in-out 1.5s infinite;
+}
+@keyframes envPulso{
+  0%,100%{ filter:drop-shadow(0 22px 55px rgba(0,0,0,.55)); }
+  50%    { filter:drop-shadow(0 28px 68px rgba(140,26,48,.45)) drop-shadow(0 22px 55px rgba(0,0,0,.45)); }
+}
+
+/* envelope container */
+.env-envelope{
+  position:relative;
+  width:min(500px, 90vw);
+  aspect-ratio:1.85 / 1;
+  cursor:pointer;
+  perspective:1300px;
+}
+.env-envelope:focus-visible{
+  outline:2px solid var(--ouro);
+  outline-offset:8px;
+}
+
+/* borda dourada */
+.env-envelope::after{
+  content:"";
+  position:absolute; inset:0;
+  border:1.5px solid rgba(201,162,39,.38);
+  z-index:8;
+  pointer-events:none;
+}
+
+/* interior — fundo pergaminho + mini passaporte */
+.env-interior{
+  position:absolute; inset:0;
+  background:#F2E5CC;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  z-index:1;
+  overflow:hidden;
+  box-shadow:inset 0 0 40px rgba(0,0,0,.12);
+}
+.env-mini-pass{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:5px;
+  padding:16px 26px;
+  border:1.5px solid rgba(201,162,39,.65);
+  outline:1px solid rgba(201,162,39,.28);
+  outline-offset:5px;
+  background:var(--navy);
+  text-align:center;
+  transform:translateY(28px);
+  opacity:0;
+  transition:transform .75s .6s cubic-bezier(.2,.9,.3,1),
+             opacity   .5s  .6s ease;
+}
+.env-envelope.aberto .env-mini-pass{
+  transform:translateY(0);
+  opacity:1;
+}
+.env-mini-titulo{
+  font-family:var(--mono);
+  font-size:clamp(.48rem, 1.8vw, .66rem);
+  letter-spacing:.38em;
+  color:var(--ouro-claro);
+  margin:0; text-indent:.38em;
+}
+.env-mini-nomes{
+  font-family:var(--serif);
+  font-size:clamp(.9rem, 3.2vw, 1.25rem);
+  font-weight:500;
+  color:var(--gelo);
+  margin:0;
+}
+.env-mini-nomes em{
+  font-size:.68em;
+  color:var(--ouro);
+  font-style:italic;
+  margin:0 .25em;
+}
+.env-mini-data{
+  font-family:var(--mono);
+  font-size:clamp(.44rem, 1.6vw, .6rem);
+  letter-spacing:.22em;
+  color:var(--azul-pale);
+  margin:0;
+}
+
+/* dobras laterais e base */
+.env-fold{
+  position:absolute; inset:0;
+  pointer-events:none;
+}
+.env-fold-esq{
+  background:#D8BC88;
+  clip-path:polygon(0 0, 50% 50%, 0 100%);
+  z-index:3;
+}
+.env-fold-dir{
+  background:#D8BC88;
+  clip-path:polygon(100% 0, 50% 50%, 100% 100%);
+  z-index:3;
+}
+.env-fold-base{
+  background:#E5CFA2;
+  clip-path:polygon(0 100%, 50% 53%, 100% 100%);
+  z-index:4;
+}
+
+/* aba superior — animada em 3D */
+.env-aba-outer{
+  position:absolute;
+  top:0; left:0; right:0;
+  height:56%;
+  transform-origin:top center;
+  transition:transform 1s cubic-bezier(.4,0,.2,1);
+  z-index:5;
+}
+.env-envelope.aberto .env-aba-outer{
+  transform:rotateX(-185deg);
+}
+.env-aba-frente{
+  position:absolute; inset:0;
+  background:#CCAF78;
+  clip-path:polygon(0 0, 100% 0, 50% 100%);
+  backface-visibility:hidden;
+}
+.env-aba-verso{
+  position:absolute; inset:0;
+  background:#BFA060;
+  clip-path:polygon(0 0, 100% 0, 50% 100%);
+  backface-visibility:hidden;
+  transform:rotateX(180deg);
+}
+
+/* selo de cera — independente da aba */
+.env-selo-wrap{
+  position:absolute;
+  left:50%; top:53%;
+  transform:translate(-50%, -50%);
+  width:clamp(64px, 15vw, 92px);
+  height:clamp(64px, 15vw, 92px);
+  z-index:7;
+  transition:transform .3s ease, opacity .3s ease;
+}
+.env-selo-wrap.quebrando{
+  animation:seloTremir .45s ease both;
+}
+.env-envelope.aberto .env-selo-wrap{
+  transform:translate(-50%, -50%) scale(0) rotate(20deg);
+  opacity:0;
+}
+@keyframes seloTremir{
+  0%  { transform:translate(-50%,-50%) rotate(0deg)  scale(1); }
+  20% { transform:translate(-50%,-50%) rotate(-9deg) scale(1.06); }
+  45% { transform:translate(-50%,-50%) rotate(7deg)  scale(1.09); }
+  70% { transform:translate(-50%,-50%) rotate(-5deg) scale(1.04); }
+  100%{ transform:translate(-50%,-50%) rotate(0deg)  scale(1); }
+}
+
+/* dica */
+.env-dica{
+  font-family:var(--mono);
+  font-size:clamp(.56rem, 1.9vw, .7rem);
+  letter-spacing:.3em;
+  color:rgba(201,144,158,.55);
+  margin:0; text-indent:.3em;
+  animation:envChegar 1s .9s both;
+  transition:opacity .4s;
+}
+.env-dica::after{
+  content:" ↓";
+  animation:piscar 1.5s ease-in-out infinite;
+}
+@keyframes piscar{
+  0%,100%{ opacity:1; }
+  50%    { opacity:.15; }
+}
+
+/* ============================================================
    ENTRADA DAS SEÇÕES
    ============================================================ */
 .revela{
@@ -754,6 +978,63 @@ body{
 </style>
 </head>
 <body>
+
+<!-- ========================= 0. ENVELOPE ===================== -->
+<div class="env-cena" id="envCena">
+  <div class="env-caixa" id="envCaixa">
+    <div class="env-envelope" id="envEnvelope"
+         role="button" tabindex="0"
+         aria-label="Clique para abrir o convite">
+
+      <!-- Interior: fundo pergaminho + mini passaporte -->
+      <div class="env-interior">
+        <div class="env-mini-pass">
+          <p class="env-mini-titulo">Passaporte</p>
+          <p class="env-mini-nomes">Victoria <em>&amp;</em> Maurilio</p>
+          <p class="env-mini-data">12 · 06 · 2027</p>
+        </div>
+      </div>
+
+      <!-- Dobras laterais e base -->
+      <div class="env-fold env-fold-esq"></div>
+      <div class="env-fold env-fold-dir"></div>
+      <div class="env-fold env-fold-base"></div>
+
+      <!-- Aba superior (animada) -->
+      <div class="env-aba-outer" id="envAba">
+        <div class="env-aba-frente"></div>
+        <div class="env-aba-verso"></div>
+      </div>
+
+      <!-- Selo de cera V&M -->
+      <div class="env-selo-wrap" id="envSelo">
+        <svg viewBox="0 0 100 100" aria-hidden="true">
+          <!-- corpo do selo (blob irregular de cera) -->
+          <ellipse cx="50" cy="51" rx="46" ry="44" fill="#8C1A30"/>
+          <ellipse cx="48" cy="49" rx="43" ry="41" fill="#9B2038" opacity=".45"/>
+          <!-- reflexo de luz -->
+          <ellipse cx="38" cy="34" rx="14" ry="9" fill="rgba(255,255,255,.10)" transform="rotate(-25 38 34)"/>
+          <!-- círculos decorativos -->
+          <circle cx="50" cy="50" r="38" fill="none" stroke="#C9A227" stroke-width="1.6" opacity=".75"/>
+          <circle cx="50" cy="50" r="43" fill="none" stroke="#C9A227" stroke-width=".7" stroke-dasharray="2.5 2.5" opacity=".45"/>
+          <!-- monograma V & M -->
+          <text x="28" y="60" text-anchor="middle"
+                font-family="Playfair Display, Georgia, serif"
+                font-size="28" fill="#E4C765" font-style="italic">V</text>
+          <text x="50" y="57" text-anchor="middle"
+                font-family="Playfair Display, Georgia, serif"
+                font-size="13" fill="#C9A227" font-style="italic">&amp;</text>
+          <text x="72" y="60" text-anchor="middle"
+                font-family="Playfair Display, Georgia, serif"
+                font-size="28" fill="#E4C765" font-style="italic">M</text>
+        </svg>
+      </div>
+
+    </div><!-- /env-envelope -->
+  </div><!-- /env-caixa -->
+
+  <p class="env-dica" id="envDica">Clique para abrir o convite</p>
+</div>
 
 <!-- ========================= 1. CAPA ========================= -->
 <header class="capa" id="capa">
@@ -1167,6 +1448,52 @@ body{
     requestAnimationFrame(function(){ setTimeout(contar, 1000); });
   }
   contar();
+})();
+</script>
+
+<script>
+/* --- Envelope de abertura --- */
+(function(){
+  "use strict";
+  var cena     = document.getElementById("envCena");
+  var caixa    = document.getElementById("envCaixa");
+  var envelope = document.getElementById("envEnvelope");
+  var selo     = document.getElementById("envSelo");
+  var dica     = document.getElementById("envDica");
+  if (!cena) return;
+
+  /* bloqueia scroll enquanto envelope está visível */
+  document.body.classList.add("env-ativa");
+
+  function abrir(){
+    if (envelope.classList.contains("aberto")) return;
+
+    /* 1 – sela treme */
+    selo.classList.add("quebrando");
+    caixa.classList.add("aberta"); /* para o pulso */
+
+    /* 2 – abre a aba após 400 ms */
+    setTimeout(function(){
+      envelope.classList.add("aberto");
+      if (dica) dica.style.opacity = "0";
+    }, 400);
+
+    /* 3 – inicia saída da cena após 2.1 s */
+    setTimeout(function(){
+      cena.classList.add("saindo");
+    }, 2100);
+
+    /* 4 – remove overlay e libera scroll após 3 s */
+    setTimeout(function(){
+      cena.style.display = "none";
+      document.body.classList.remove("env-ativa");
+    }, 3000);
+  }
+
+  envelope.addEventListener("click", abrir);
+  envelope.addEventListener("keydown", function(e){
+    if (e.key === "Enter" || e.key === " "){ e.preventDefault(); abrir(); }
+  });
 })();
 </script>
 </body>
