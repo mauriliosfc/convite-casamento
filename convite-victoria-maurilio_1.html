@@ -1520,10 +1520,11 @@ body.env-ativa{ overflow:hidden; }
       cena.classList.add("saindo");
     }, 2100);
 
-    /* 4 – remove overlay e libera scroll após 3 s */
+    /* 4 – remove overlay, libera scroll e vai ao topo após 3 s */
     setTimeout(function(){
       cena.style.display = "none";
       document.body.classList.remove("env-ativa");
+      window.scrollTo({ top: 0, behavior: "instant" });
     }, 3000);
   }
 
