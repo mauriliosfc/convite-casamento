@@ -27,7 +27,7 @@
 <script>
 const CONVITE = {
   formulario: "https://forms.gle/COLE-SEU-LINK-AQUI",  // <<< TROQUE pelo link do seu Google Forms
-  prazoRsvp:  "12 de maio de 2027",
+  prazoRsvp:  "01 de fevereiro de 2027",
   pix:        "113.716.896-01",
   dataHora:   "2027-06-12T17:00:00-03:00",
   mapa:       "https://maps.google.com/?q=Comunidade+S%C3%A3o+Padre+Pio+Vale+dos+Sonhos+Lagoa+Santa+MG"
@@ -982,8 +982,8 @@ body.env-ativa{ overflow:hidden; }
   position:absolute;
   left:50%; top:53%;
   transform:translate(-50%, -50%);
-  width:clamp(64px, 15vw, 92px);
-  height:clamp(64px, 15vw, 92px);
+  width:clamp(80px, 18.75vw, 115px);
+  height:clamp(80px, 18.75vw, 115px);
   z-index:7;
   transition:transform .3s ease, opacity .3s ease;
 }
@@ -1086,18 +1086,18 @@ body.env-ativa{ overflow:hidden; }
           <!-- reflexo de luz -->
           <ellipse cx="38" cy="34" rx="14" ry="9" fill="rgba(255,255,255,.10)" transform="rotate(-25 38 34)"/>
           <!-- círculos decorativos -->
-          <circle cx="50" cy="50" r="38" fill="none" stroke="#C9A227" stroke-width="1.6" opacity=".75"/>
-          <circle cx="50" cy="50" r="43" fill="none" stroke="#C9A227" stroke-width=".7" stroke-dasharray="2.5 2.5" opacity=".45"/>
+          <circle cx="50" cy="50" r="44" fill="none" stroke="#C9A227" stroke-width="1.6" opacity=".75"/>
+          <circle cx="50" cy="50" r="47" fill="none" stroke="#C9A227" stroke-width=".7" stroke-dasharray="2.5 2.5" opacity=".45"/>
           <!-- monograma V & M -->
-          <text x="28" y="60" text-anchor="middle"
-                font-family="Playfair Display, Georgia, serif"
-                font-size="28" fill="#E4C765" font-style="italic">V</text>
-          <text x="50" y="57" text-anchor="middle"
-                font-family="Playfair Display, Georgia, serif"
-                font-size="13" fill="#C9A227" font-style="italic">&amp;</text>
-          <text x="72" y="60" text-anchor="middle"
-                font-family="Playfair Display, Georgia, serif"
-                font-size="28" fill="#E4C765" font-style="italic">M</text>
+          <text x="29" y="62" text-anchor="middle"
+                font-family="Great Vibes, cursive"
+                font-size="24" fill="#E4C765">V</text>
+          <text x="50" y="59" text-anchor="middle"
+                font-family="Great Vibes, cursive"
+                font-size="11" fill="#C9A227">&amp;</text>
+          <text x="70" y="62" text-anchor="middle"
+                font-family="Great Vibes, cursive"
+                font-size="24" fill="#E4C765">M</text>
         </svg>
       </div>
 
@@ -1150,9 +1150,7 @@ body.env-ativa{ overflow:hidden; }
 <section class="pagina pagina--papel" id="identificacao">
   <div class="miolo revela">
     <div class="cabeca">
-      <h2>Titulares</h2>
-      <span class="folio">Página 02</span>
-    </div>
+      <h2>Titulares</h2>    </div>
 
     <div class="retrato-casal">
       <video src="casal.mp4" autoplay loop muted playsinline></video>
@@ -1185,7 +1183,7 @@ body.env-ativa{ overflow:hidden; }
   <div class="miolo revela">
     <div class="cabeca">
       <h2>Visto de entrada</h2>
-      <span class="folio">Página 03</span>
+
     </div>
 
     <div class="visto">
@@ -1223,7 +1221,7 @@ body.env-ativa{ overflow:hidden; }
   <div class="miolo revela">
     <div class="cabeca">
       <h2>Itinerário do dia</h2>
-      <span class="folio">Página 04</span>
+
     </div>
 
     <ol class="itinerario">
@@ -1263,7 +1261,7 @@ body.env-ativa{ overflow:hidden; }
   <div class="miolo revela">
     <div class="cabeca">
       <h2>Cartão de embarque</h2>
-      <span class="folio">Página 05</span>
+
     </div>
 
     <div class="embarque">
@@ -1325,7 +1323,7 @@ body.env-ativa{ overflow:hidden; }
   <div class="miolo revela">
     <div class="cabeca">
       <h2>Bagagem de mão</h2>
-      <span class="folio">Página 06</span>
+
     </div>
 
     <div class="bagagem">
@@ -1361,15 +1359,15 @@ body.env-ativa{ overflow:hidden; }
   <div class="miolo revela">
     <div class="cabeca">
       <h2>Controle de passaporte</h2>
-      <span class="folio">Página 07</span>
+
     </div>
 
     <div class="controle">
       <p class="controle-texto">
-        Todo passageiro passa pelo controle antes de embarcar. Informe seu nome
-        para confirmar presença — leva menos de um minuto.
+        Seu passaporte para o nosso grande dia está quase pronto! Confirme sua
+        presença e embarque conosco nessa nova história.
       </p>
-      <p class="controle-prazo" id="prazoRsvp">Confirme até 12 de maio de 2027</p>
+      <p class="controle-prazo" id="prazoRsvp">Confirme até 01 de fevereiro de 2027</p>
 
       <div class="btn-grupo">
         <a class="btn" id="btnRsvp" href="#" target="_blank" rel="noopener">Confirmar presença</a>
