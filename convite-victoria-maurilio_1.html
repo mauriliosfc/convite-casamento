@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Victória &amp; Maurílio · 12.06.2027</title>
-<meta name="description" content="Convite de casamento de Victória e Maurílio. Sábado, 12 de junho de 2027, às 17h, no Santuário Nossa Senhora da Saúde, Lagoa Santa - MG.">
+<meta name="description" content="Convite de casamento de Victória e Maurílio. Sábado, 12 de junho de 2027, às 17h, na Comunidade São Padre Pio, Vale dos Sonhos, Lagoa Santa - MG.">
 
 <!-- Mantém o convite fora dos buscadores. O link continua funcionando
      normalmente para quem recebe; só não aparece em pesquisas do Google. -->
@@ -13,7 +13,7 @@
 <!-- Prévia ao compartilhar o link no WhatsApp, Instagram, etc. -->
 <meta property="og:type" content="website">
 <meta property="og:title" content="Victória & Maurílio · 12.06.2027">
-<meta property="og:description" content="Sábado, 17h · Santuário Nossa Senhora da Saúde · Lagoa Santa, MG. Abra seu passaporte e confirme o embarque.">
+<meta property="og:description" content="Sábado, 17h · Comunidade São Padre Pio · Vale dos Sonhos, Lagoa Santa, MG. Abra seu passaporte e confirme o embarque.">
 <meta property="og:locale" content="pt_BR">
 <!-- Depois de hospedar, descomente as duas linhas abaixo e troque pelo seu endereço.
      A imagem precisa ser uma URL completa, de preferência 1200x630px. -->
@@ -30,7 +30,7 @@ const CONVITE = {
   prazoRsvp:  "12 de maio de 2027",
   pix:        "113.716.896-01",
   dataHora:   "2027-06-12T17:00:00-03:00",
-  mapa:       "https://maps.google.com/?q=Santu%C3%A1rio+Nossa+Senhora+da+Sa%C3%BAde+Lagoa+Santa+MG"
+  mapa:       "https://maps.google.com/?q=Comunidade+S%C3%A3o+Padre+Pio+Vale+dos+Sonhos+Lagoa+Santa+MG"
 };
 </script>
 
@@ -686,7 +686,39 @@ body{
   color:var(--ouro-claro);
   margin:22px 0 0;
 }
-.controle .btn{ margin-top:26px; }
+.controle .btn-grupo{
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+  margin-top:26px;
+}
+.controle .btn{
+  border-radius:50px;
+  padding:12px 24px;
+  flex:1 1 auto;
+  text-align:center;
+}
+.btn-presente{
+  display:inline-block;
+  font-family:var(--mono);
+  font-size:.78rem;
+  letter-spacing:.17em;
+  text-decoration:none;
+  padding:12px 24px;
+  border:1px solid var(--azul-pale);
+  color:var(--azul-pale);
+  background:transparent;
+  cursor:pointer;
+  border-radius:50px;
+  flex:1 1 auto;
+  text-align:center;
+  transition:background .35s, color .35s, box-shadow .35s;
+}
+.btn-presente:hover,.btn-presente:focus-visible{
+  background:var(--azul-pale);
+  color:var(--navy);
+  box-shadow:0 0 22px rgba(201,144,158,.35);
+}
 .carimbo-controle{
   --rot:0deg;
   position:absolute;
@@ -1158,8 +1190,8 @@ body.env-ativa{ overflow:hidden; }
 
     <div class="visto">
       <p class="visto-tipo">Cerimônia religiosa</p>
-      <p class="visto-local">Santuário Nossa Senhora da Saúde</p>
-      <p class="visto-end">Centro · Lagoa Santa · Minas Gerais</p>
+      <p class="visto-local">Comunidade São Padre Pio</p>
+      <p class="visto-end">Vale dos Sonhos · Lagoa Santa · Minas Gerais</p>
 
       <div class="visto-linhas">
         <div><span>Data</span><strong>12 jun 2027</strong></div>
@@ -1185,7 +1217,8 @@ body.env-ativa{ overflow:hidden; }
   </div>
 </section>
 
-<!-- ===================== 4. ITINERÁRIO ====================== -->
+<!-- ===================== 4. ITINERÁRIO (DESATIVADO) ====================== -->
+<!--
 <section class="pagina pagina--gelo" id="itinerario">
   <div class="miolo revela">
     <div class="cabeca">
@@ -1197,13 +1230,13 @@ body.env-ativa{ overflow:hidden; }
       <li>
         <span class="hora">16h30</span>
         <p class="etapa">Chegada dos convidados
-          <small>Vá com calma, o santuário fica no Centro</small>
+          <small>Comunidade São Padre Pio, Vale dos Sonhos</small>
         </p>
       </li>
       <li>
         <span class="hora">17h00</span>
         <p class="etapa">Cerimônia
-          <small>Santuário Nossa Senhora da Saúde</small>
+          <small>Comunidade São Padre Pio</small>
         </p>
       </li>
       <li>
@@ -1213,33 +1246,19 @@ body.env-ativa{ overflow:hidden; }
         </p>
       </li>
       <li>
-        <span class="hora">19h00</span>
-        <p class="etapa">Recepção
+        <span class="hora">18h30</span>
+        <p class="etapa">Recepção / Jantar
           <small>Bem-vindos, brindes e cumprimentos</small>
-        </p>
-      </li>
-      <li>
-        <span class="hora">20h00</span>
-        <p class="etapa">Jantar</p>
-      </li>
-      <li>
-        <span class="hora">21h30</span>
-        <p class="etapa">Festa
-          <small>Até o último voo da noite</small>
         </p>
       </li>
     </ol>
   </div>
 
-  <svg class="carimbo-solto" style="top:40px; right:18px; width:96px; height:96px; --rot:11deg" viewBox="0 0 120 120" aria-hidden="true">
-    <circle cx="60" cy="60" r="52" fill="none" stroke="#4A0E1A" stroke-width="2.2" stroke-dasharray="5 3"/>
-    <text x="60" y="52" text-anchor="middle" font-family="Courier Prime, monospace" font-size="11" fill="#4A0E1A">12 JUN</text>
-    <text x="60" y="70" text-anchor="middle" font-family="Courier Prime, monospace" font-size="15" fill="#4A0E1A">2027</text>
-    <text x="60" y="84" text-anchor="middle" font-family="Courier Prime, monospace" font-size="7.5" fill="#4A0E1A" letter-spacing="1">SÁBADO</text>
-  </svg>
 </section>
+-->
 
-<!-- ================== 5. CARTÃO DE EMBARQUE ================= -->
+<!-- ================== 5. CARTÃO DE EMBARQUE (DESATIVADO) ================= -->
+<!--
 <section class="pagina pagina--papel" id="embarque">
   <div class="miolo revela">
     <div class="cabeca">
@@ -1298,8 +1317,10 @@ body.env-ativa{ overflow:hidden; }
     </div>
   </div>
 </section>
+-->
 
-<!-- ======================= 6. BAGAGEM ======================= -->
+<!-- ======================= 6. BAGAGEM (DESATIVADO) ======================= -->
+<!--
 <section class="pagina pagina--gelo" id="bagagem">
   <div class="miolo revela">
     <div class="cabeca">
@@ -1323,16 +1344,17 @@ body.env-ativa{ overflow:hidden; }
 
       <div class="etiqueta">
         <h3>Hospedagem</h3>
-        <p>Lagoa Santa tem pousadas no Centro, a poucos minutos do santuário. Confins fica a 15 minutos, para quem chega de avião.</p>
+        <p>Lagoa Santa tem pousadas a poucos minutos da Comunidade São Padre Pio. Confins fica a 15 minutos, para quem chega de avião.</p>
       </div>
 
       <div class="etiqueta">
         <h3>Estacionamento</h3>
-        <p>Há vagas nas ruas ao redor do santuário. Chegue com alguma folga para não correr até o altar.</p>
+        <p>Há vagas nas ruas ao redor da Comunidade São Padre Pio. Chegue com alguma folga para não correr até o altar.</p>
       </div>
     </div>
   </div>
 </section>
+-->
 
 <!-- ======================== 7. RSVP ========================= -->
 <section class="pagina pagina--escura" id="confirmacao">
@@ -1344,25 +1366,15 @@ body.env-ativa{ overflow:hidden; }
 
     <div class="controle">
       <p class="controle-texto">
-        Todo passageiro passa pelo controle antes de embarcar. Preencha o formulário
-        com seu nome e o número de acompanhantes — leva menos de um minuto.
+        Todo passageiro passa pelo controle antes de embarcar. Informe seu nome
+        para confirmar presença — leva menos de um minuto.
       </p>
       <p class="controle-prazo" id="prazoRsvp">Confirme até 12 de maio de 2027</p>
 
-      <a class="btn" id="btnRsvp" href="#" target="_blank" rel="noopener">Confirmar presença</a>
-
-      <svg class="carimbo-controle" id="carimboControle" viewBox="0 0 140 140" aria-hidden="true">
-        <g transform="rotate(-13 70 70)">
-          <circle cx="70" cy="70" r="62" fill="none" stroke="#C9A227" stroke-width="3"/>
-          <circle cx="70" cy="70" r="53" fill="none" stroke="#C9A227" stroke-width="1.2"/>
-          <path id="arcoCtrl" d="M70 70 m -40 0 a 40 40 0 1 1 80 0" fill="none"/>
-          <text font-family="Courier Prime, monospace" font-size="10" fill="#C9A227" letter-spacing="2.2">
-            <textPath href="#arcoCtrl" startOffset="50%" text-anchor="middle">CONTROLE DE FRONTEIRA</textPath>
-          </text>
-          <text x="70" y="76" text-anchor="middle" font-family="Courier Prime, monospace" font-size="16" font-weight="700" fill="#C9A227">EMBARQUE</text>
-          <text x="70" y="94" text-anchor="middle" font-family="Courier Prime, monospace" font-size="9.5" fill="#C9A227" letter-spacing="1.4">12·06·2027</text>
-        </g>
-      </svg>
+      <div class="btn-grupo">
+        <a class="btn" id="btnRsvp" href="#" target="_blank" rel="noopener">Confirmar presença</a>
+        <button class="btn-presente" id="btnPresente" type="button">Deixar presente</button>
+      </div>
     </div>
   </div>
 </section>
@@ -1388,7 +1400,7 @@ body.env-ativa{ overflow:hidden; }
   document.getElementById("btnMapa").href = CONVITE.mapa;
 
   /* ---------- revelar seções ---------- */
-  var alvos = document.querySelectorAll(".revela, .carimbo-solto, .carimbo-controle");
+  var alvos = document.querySelectorAll(".revela, .carimbo-solto");
   if ("IntersectionObserver" in window){
     var obs = new IntersectionObserver(function(entradas){
       entradas.forEach(function(e){
@@ -1425,6 +1437,28 @@ body.env-ativa{ overflow:hidden; }
       document.body.appendChild(t); t.select();
       try { document.execCommand("copy"); feito(); }
       catch(e){ btnPix.textContent = "Copie: " + chave; }
+      document.body.removeChild(t);
+    }
+  });
+
+  /* ---------- Deixar presente: copia chave Pix ---------- */
+  var btnPresente = document.getElementById("btnPresente");
+  btnPresente.addEventListener("click", function(){
+    var chave = CONVITE.pix;
+    var feito = function(){
+      btnPresente.textContent = "Chave copiada!";
+      setTimeout(function(){ btnPresente.textContent = "Deixar presente"; }, 2600);
+    };
+    if (navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(chave).then(feito).catch(reservaP);
+    } else { reservaP(); }
+    function reservaP(){
+      var t = document.createElement("textarea");
+      t.value = chave; t.setAttribute("readonly","");
+      t.style.position = "absolute"; t.style.left = "-9999px";
+      document.body.appendChild(t); t.select();
+      try { document.execCommand("copy"); feito(); }
+      catch(e){ btnPresente.textContent = "Copie: " + chave; }
       document.body.removeChild(t);
     }
   });
