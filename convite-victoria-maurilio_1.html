@@ -1419,7 +1419,7 @@ body.env-ativa{ overflow:hidden; }
 
   /* ---------- copiar Pix ---------- */
   var btnPix = document.getElementById("btnPix");
-  btnPix.addEventListener("click", function(){
+  if (btnPix){ btnPix.addEventListener("click", function(){
     var chave = CONVITE.pix;
     var feito = function(){
       btnPix.textContent = "Chave copiada";
@@ -1437,7 +1437,7 @@ body.env-ativa{ overflow:hidden; }
       catch(e){ btnPix.textContent = "Copie: " + chave; }
       document.body.removeChild(t);
     }
-  });
+  }); }
 
   /* ---------- Deixar presente: copia chave Pix ---------- */
   var btnPresente = document.getElementById("btnPresente");
