@@ -26,7 +26,8 @@
      ============================================================ -->
 <script>
 const CONVITE = {
-  formulario: "https://forms.gle/COLE-SEU-LINK-AQUI",  // <<< TROQUE pelo link do seu Google Forms
+  formulario: "https://forms.gle/COLE-SEU-LINK-AQUI",  // Destino padrão quando não há link individual
+  presentes:  "https://vmsh.store/lista/SEU-SLUG-AQUI", // URL pública padrão da lista de presentes
   prazoRsvp:  "01 de fevereiro de 2027",
   pix:        "113.716.896-01",
   dataHora:   "2027-06-12T17:00:00-03:00",
@@ -1371,7 +1372,7 @@ body.env-ativa{ overflow:hidden; }
 
       <div class="btn-grupo">
         <a class="btn" id="btnRsvp" href="#" target="_blank" rel="noopener">Confirmar presença</a>
-        <button class="btn-presente" id="btnPresente" type="button">Deixar presente</button>
+        <a class="btn-presente" id="btnPresente" href="#" target="_blank" rel="noopener">Dar presente</a>
       </div>
     </div>
   </div>
@@ -1413,8 +1414,41 @@ body.env-ativa{ overflow:hidden; }
     alvos.forEach(function(el){ el.classList.add("dentro"); });
   }
 
-  /* ---------- RSVP: Google Forms ---------- */
-  document.getElementById("btnRsvp").href = CONVITE.formulario;
+  /* ---------- RSVP e presentes: link individual injetado pelo sistema ---------- */
+  var parametrosConvite = new URLSearchParams(window.location.search);
+  var linkRsvpIndividual = parametrosConvite.get("rsvp");
+  var linkPresentesIndividual = parametrosConvite.get("presentes");
+  var eventoConviteId = parametrosConvite.get("eventId");
+
+  function urlHttpValida(valor){
+    if (!valor) return "";
+    try {
+      var url = new URL(valor, window.location.href);
+      return url.protocol === "https:" || url.protocol === "http:" ? url.href : "";
+    } catch(e){ return ""; }
+  }
+
+  var destinoIndividual = urlHttpValida(linkRsvpIndividual);
+  if (destinoIndividual && eventoConviteId){
+    var urlIndividualComEvento = new URL(destinoIndividual);
+    if (!urlIndividualComEvento.searchParams.has("eventId")) urlIndividualComEvento.searchParams.set("eventId", eventoConviteId);
+    destinoIndividual = urlIndividualComEvento.toString();
+  }
+
+  var linkRsvpPadrao = urlHttpValida(CONVITE.formulario);
+  var linkPresentesPadrao = urlHttpValida(CONVITE.presentes);
+  document.getElementById("btnRsvp").href = destinoIndividual || linkRsvpPadrao || "#";
+  var linkPresentesIndividualValido = urlHttpValida(linkPresentesIndividual);
+  var destinoPresentes = linkPresentesIndividualValido || linkPresentesPadrao || "#";
+  document.getElementById("btnPresente").href = destinoPresentes;
+  var respostaLocalRegistrada = false;
+  if (eventoConviteId) {
+    try {
+      var respostaLocal = JSON.parse(localStorage.getItem("rsvp-answered:" + eventoConviteId) || "null");
+      respostaLocalRegistrada = Boolean(respostaLocal && typeof respostaLocal.slug === "string");
+    } catch (erroLocal) { /* O armazenamento do navegador pode estar indisponível. */ }
+  }
+  if (respostaLocalRegistrada && destinoPresentes !== "#") window.location.replace(destinoPresentes);
   document.getElementById("prazoRsvp").textContent = "Confirme até " + CONVITE.prazoRsvp;
 
   /* ---------- copiar Pix ---------- */
@@ -1438,28 +1472,6 @@ body.env-ativa{ overflow:hidden; }
       document.body.removeChild(t);
     }
   }); }
-
-  /* ---------- Deixar presente: copia chave Pix ---------- */
-  var btnPresente = document.getElementById("btnPresente");
-  btnPresente.addEventListener("click", function(){
-    var chave = CONVITE.pix;
-    var feito = function(){
-      btnPresente.textContent = "Chave copiada!";
-      setTimeout(function(){ btnPresente.textContent = "Deixar presente"; }, 2600);
-    };
-    if (navigator.clipboard && navigator.clipboard.writeText){
-      navigator.clipboard.writeText(chave).then(feito).catch(reservaP);
-    } else { reservaP(); }
-    function reservaP(){
-      var t = document.createElement("textarea");
-      t.value = chave; t.setAttribute("readonly","");
-      t.style.position = "absolute"; t.style.left = "-9999px";
-      document.body.appendChild(t); t.select();
-      try { document.execCommand("copy"); feito(); }
-      catch(e){ btnPresente.textContent = "Copie: " + chave; }
-      document.body.removeChild(t);
-    }
-  });
 
   /* ---------- contagem regressiva ---------- */
   var destino = new Date(CONVITE.dataHora).getTime();
